@@ -56,10 +56,10 @@ public class MockInput implements Input {
         return 0;
     }
 
-	/*@Override
-	public int getMaxPointers () {
-		return 0;
-	}*/
+    @Override
+    public int getMaxPointers() {
+        return 0;
+    }
 
     @Override
     public int getX() {
@@ -132,6 +132,11 @@ public class MockInput implements Input {
     }
 
     @Override
+    public boolean isButtonJustPressed(int button) {
+        return false;
+    }
+
+    @Override
     public boolean isKeyPressed(int key) {
         return false;
     }
@@ -147,7 +152,17 @@ public class MockInput implements Input {
     }
 
     @Override
+    public void getTextInput(TextInputListener listener, String title, String text, String hint, OnscreenKeyboardType type) {
+
+    }
+
+    @Override
     public void setOnscreenKeyboardVisible(boolean visible) {
+
+    }
+
+    @Override
+    public void setOnscreenKeyboardVisible(boolean visible, OnscreenKeyboardType type) {
 
     }
 
@@ -157,12 +172,17 @@ public class MockInput implements Input {
     }
 
     @Override
-    public void vibrate(long[] pattern, int repeat) {
+    public void vibrate(int milliseconds, boolean fallback) {
 
     }
 
     @Override
-    public void cancelVibrate() {
+    public void vibrate(int milliseconds, int amplitude, boolean fallback) {
+
+    }
+
+    @Override
+    public void vibrate(VibrationType vibrationType) {
 
     }
 
@@ -208,6 +228,16 @@ public class MockInput implements Input {
 
     @Override
     public boolean isCatchMenuKey() {
+        return false;
+    }
+
+    @Override
+    public void setCatchKey(int keycode, boolean catchKey) {
+
+    }
+
+    @Override
+    public boolean isCatchKey(int keycode) {
         return false;
     }
 
